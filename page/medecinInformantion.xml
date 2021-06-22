@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- model.name inherit form view -->
+        <record id="information_specialisation" model="ir.ui.view">
+            <field name="name">	medical.pharmacie.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+               <notebook>
+                   <page string=>
+                   </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,36 @@
+/*============================================================================================*/
+/* Your custom styles below */
+/*============================================================================================*/
+.o_affix_enabled{
+    display: none;
+  }
+ 
+  .o_footer{
+    display: none;
+  }
+  .navbar-light{
+      display: none;
+  }
+  @media (max-width: 500px) {
+    .dispart {
+      /* For less than 500px */
+      display: none;
+    }
+  }
+
+  @media (max-width: 3000px) {
+    .box_feat1 {
+      /* For less than 500px */
+      display: none;
+    }
+  }
+
+.medecin_id_class{
+  display: none;
+}
+
+
+
+  
+
+ 

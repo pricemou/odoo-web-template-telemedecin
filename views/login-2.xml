@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <template id="login">
+            <xpath expr="//link[last()]" position="after" > 
+                <meta charset="utf-8"/>
+                <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+                <meta name="description" content="Find easily a doctor and book online an appointment"/>
+                <meta name="author" content="Ansonika"/>
+                <title>open medecine</title>
+
+
+                <!-- Favicons-->
+                <link rel="shortcut icon" href="/webtemplate/static/img/favicon.ico" type="image/x-icon"/>
+                <link rel="apple-touch-icon" type="image/x-icon" href="/webtemplate/static/img/apple-touch-icon-57x57-precomposed.png"/>
+                <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="/webtemplate/static/img/apple-touch-icon-72x72-precomposed.png"/>
+                <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="/webtemplate/static/img/apple-touch-icon-114x114-precomposed.png"/>
+                <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="/webtemplate/static/img/apple-touch-icon-144x144-precomposed.png"/>
+                
+                <!-- GOOGLE WEB FONT -->
+                <!-- <link href="https:/register/fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/> -->
+                <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+                <!-- BASE CSS -->
+                <link href="/webtemplate/static/css/bootstrap.min.css" rel="stylesheet"/>
+                <link href="/webtemplate/static/css/style.css" rel="stylesheet"/>
+                <link href="/webtemplate/static/css/menu.css" rel="stylesheet"/>
+                <link href="/webtemplate/static/css/vendors.css" rel="stylesheet"/>
+                <link href="/webtemplate/static/css/icon_fonts/css/all_icons_min.css" rel="stylesheet"/>
+                
+                <!-- YOUR CUSTOM CSS -->
+                <link href="/webtemplate/static/css/custom.css" rel="stylesheet"/>
+
+          </xpath> 
+
+          <body>
+              <header class="header_sticky">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-6">
+                                            <div id="logo_home">
+                                                <h1><a href="index-3.html" title="Findoctor">Open Medecine</a></h1>
+                                            </div>
+                                        </div>
+                                        <nav class="col-lg-9 col-6">
+                                            <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="#0"><span>Menu mobile</span></a>
+                                            <ul id="top_access">
+                                                <li><a href="login.html"><i class="pe-7s-user"></i></a></li>
+                                                <li><a href="register-doctor.html"><i class="pe-7s-add-user"></i></a></li>
+                                            </ul>
+                                            <div class="main-menu">
+                                                <ul>
+                                                    <li class="submenu">
+                                                        <a href="/login" class="show-submenu"><i class="fas fa-user"></i></a>
+                                                    </li>
+                                                    <li class="submenu">
+                                                        <a href="/lsteRechercher" class="show-submenu"><i class="fas fa-heartbeat"></i></a>
+                                                    </li>
+                                                    <li class="submenu">
+                                                        <a href="booking-page.html" class="show-submenu"><i class="fas fa-history"></i></a>
+                                                    </li>
+                                                    <li><a href="#0"><i class="fas fa-user"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <!-- /main-menu -->
+                                        </nav>
+                                    </div>
+                                </div>
+                                <!-- /container -->
+                            </header>
+                            <!-- /header -->
+
+                <main>
+                    <div class="bg_color_2">
+                        <div class="container margin_60_35">
+                            <div id="login">
+                                <h1>Please login to Findoctor!</h1>
+                                <div class="box_form">
+                                    <form>
+                                        <a href="#0" class="social_bt facebook">Login with Facebook</a>
+                                        <a href="#0" class="social_bt google">Login with Google</a>
+                                        <a href="#0" class="social_bt linkedin">Login with Linkedin</a>
+                                        <div class="divider"><span>Or</span></div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" placeholder="Your email address"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="Your password" name="password" id="password"/>
+                                        </div>
+                                        <a href="#0"><small>Forgot password?</small></a>
+                                        <div class="form-group text-center add_top_20">
+                                            <input class="btn_1 medium" type="submit" value="Login"/>
+                                        </div>
+                                    </form>
+                                </div>
+                                <p class="text-center link_bright">Do not have an account yet? <a href="#0"><strong>Register now!</strong></a></p>
+                            </div>
+                            <!-- /login -->
+                        </div>
+                    </div>
+                </main>
+
+                
+                <script src="/webtemplate/static/js/jquery-3.5.1.min.js"></script>
+                <script src="/webtemplate/static/js/common_scripts.min.js"></script>
+                <script src="/webtemplate/static/js/functions.js"></script>
+
+          </body>
+
+
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,86 @@
+<odoo>
+    <data>
+        <!-- webtemplate.categorie form view -->
+        <record id="webtemplate_categorie_view_form" model="ir.ui.view">
+            <field name="name">webtemplate.categorie.view.form</field>
+            <field name="model">webtemplate.categorie</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <header>
+                        <button name="sendData" string="Vaider l' Enregistrement" type="object" class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Nom" />
+                            </h1>
+                        </div>
+                        <group>
+                            
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <!-- model.webtemplate.categorie kanban view -->
+
+    <record id="webtemplate.categorie_view_kanban" model="ir.ui.view">
+        <field name="name">webtemplate.categorie.view.kanban</field>
+        <field name="model">webtemplate.categorie</field>
+        <field name="arch" type="xml"> 
+            <kanban string="Kanban Description">
+                <!-- Add your fields here -->
+                <field name="id"/>
+                <field name="name"/>
+                <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_deober_fan_kanban">
+                               
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title oe_partner_heading"><field name="display_name"/></strong>
+                                    <div class="o_kanban_tags_section oe_kanban_partner_categories"/>
+                                    <ul>
+                                        <li>Nom: <field name="name"/> </li>
+                                    </ul>
+                                    <div class="oe_kanban_partner_links"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- webtemplate.categorie tree view -->
+    <record id="webtemplate_categorie_view_tree" model="ir.ui.view">
+        <field name="name">webtemplate.categorie.view.tree</field>
+        <field name="model">webtemplate.categorie</field>
+        <field name="arch" type="xml">
+            <tree>
+                    <!-- Add your fields here --> 
+            </tree>
+        </field>
+    </record>
+
+        <!-- This Menu Item Must have a parent -->
+    
+    <record id="webtemplate_categorie_actions" model="ir.actions.act_window">
+        <field name="name">Liste des webtemplate: </field>
+        <field name="res_model">webtemplate.categorie</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            <!-- Add Text Here -->
+          </p><p>
+            <!-- More details about what a user can do with this object will be OK --> 
+          </p>
+        </field>
+      </record>
+
+      <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+      <menuitem id="webtemplate" name="webtemplate" sequence="2"/>
+      <menuitem id="_menu_act" name="categorie" parent="webtemplate" action="webtemplate_categorie_actions" sequence=""/>
+    </data>
+</odoo>

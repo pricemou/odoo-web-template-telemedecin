@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <template id="medecin_connect">
+            <xpath expr="//link[last()]" position="after" > 
+                <meta charset="utf-8"/>
+                <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+                <meta name="description" content="Find easily a doctor and book online an appointment"/>
+                <meta name="author" content="Ansonika"/>
+                <title>open medecine</title>
+
+
+                <!-- Favicons-->
+                <link rel="shortcut icon" href="/webtemplate/static/img/favicon.ico" type="image/x-icon"/>
+                <link rel="apple-touch-icon" type="image/x-icon" href="/webtemplate/static/img/apple-touch-icon-57x57-precomposed.png"/>
+                <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="/webtemplate/static/img/apple-touch-icon-72x72-precomposed.png"/>
+                <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="/webtemplate/static/img/apple-touch-icon-114x114-precomposed.png"/>
+                <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="/webtemplate/static/img/apple-touch-icon-144x144-precomposed.png"/>
+                
+                <!-- GOOGLE WEB FONT -->
+                <!-- <link href="https:/register/fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/> -->
+                <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+                <!-- BASE CSS -->
+                <link href="/webtemplate/static/css/bootstrap.min.css" rel="stylesheet"/>
+                <link href="/webtemplate/static/css/style.css" rel="stylesheet"/>
+                <link href="/webtemplate/static/css/menu.css" rel="stylesheet"/>
+                <link href="/webtemplate/static/css/vendors.css" rel="stylesheet"/>
+                <link href="/webtemplate/static/css/icon_fonts/css/all_icons_min.css" rel="stylesheet"/>
+                
+                <!-- YOUR CUSTOM CSS -->
+                <link href="/webtemplate/static/css/custom.css" rel="stylesheet"/>
+
+          </xpath> 
+
+          <body>
+              <header class="header_sticky">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-6">
+                                            <div id="logo_home">
+                                                <h1><a href="index-3.html" title="Findoctor">Open Medecine</a></h1>
+                                            </div>
+                                        </div>
+                                        <nav class="col-lg-9 col-6">
+                                            <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="#0"><span>Menu mobile</span></a>
+                                            <ul id="top_access">
+                                                <li><a href="login.html"><i class="pe-7s-user"></i></a></li>
+                                                <li><a href="register-doctor.html"><i class="pe-7s-add-user"></i></a></li>
+                                            </ul>
+                                            <div class="main-menu">
+                                                <ul>
+                                                    <li class="submenu">
+                                                        <a href="/login" class="show-submenu"><i class="fas fa-user"></i></a>
+                                                    </li>
+                                                    <li class="submenu">
+                                                        <a href="/lsteRechercher" class="show-submenu"><i class="fas fa-heartbeat"></i></a>
+                                                    </li>
+                                                    <li class="submenu">
+                                                        <a href="booking-page.html" class="show-submenu"><i class="fas fa-history"></i></a>
+                                                    </li>
+                                                    <li><a href="#0"><i class="fas fa-user"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <!-- /main-menu -->
+                                        </nav>
+                                    </div>
+                                </div>
+                                <!-- /container -->
+                            </header>
+                            <!-- /header -->
+
+                    <main>
+		<div id="results">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<h4><strong>Affichage de 10</strong> sur 140 résultats</h4>
+					</div>
+					<div class="col-md-6">
+						<div class="search_bar_list">
+							<input type="text" class="form-control" placeholder="Ex. Specialiste, Nom, Médecins..."/>
+							<input type="submit" value="Search"/>
+						</div>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /results -->
+
+		<div class="filters_listing">
+			<div class="container">
+				<ul class="clearfix">
+					<li>
+						<h6>Type</h6>
+						<div class="switch-field">
+							<input type="radio" id="all" name="type_patient" value="all" />
+							<label for="all">Toute</label>
+							<input type="radio" id="doctors" name="type_patient" value="doctors"/>
+							<label for="doctors"><t t-esc="user_id.name"/></label>
+							<input type="radio" id="clinics" name="type_patient" value="clinics"/>
+						</div>
+					</li>
+					<li>
+						<h6>Layout</h6>
+						<div class="layout_view">
+							<a href="grid-list.html"><i class="icon-th"></i></a>
+							<a href="#0" class="active"><i class="icon-th-list"></i></a>
+							<a href="list-map.html"><i class="icon-map-1"></i></a>
+						</div>
+					</li>
+					<li>
+						<h6>Sort by</h6>
+						<select name="orderby" class="selectbox">
+						<option value="Closest">Status</option>
+						<option value="Men">Hommes</option>
+						<option value="Women">Femmes</option>
+						</select>
+					</li>
+				</ul>
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /filters -->
+		
+		<div class="container margin_60_35">
+			<div class="row">
+				<div class="col-lg-7">
+
+
+				<t t-foreach="medecin" t-as="medecin">
+					<div class="strip_list wow fadeIn">
+						<a href="#0" class="wish_bt"></a>
+						<figure>
+							<a href="/detail-medecin"><img t-att-src="'data:image/png;base64,%s' % to_text(medecin.partner_id.image)" class="img-fluid" /></a>
+						</figure>
+						 <small><t t-esc="medecin.speciality_id.name"/></small>
+                         <h3><t t-esc="medecin.partner_id.name"/></h3>
+						<p><t t-esc="medecin.info"/></p>
+						<span class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i> <small>(145)</small></span>
+						<a href="badges.html" data-toggle="tooltip" data-placement="top" data-original-title="Badge Level" class="badge_list_1"><img src="img/badges/badge_1.svg" width="15" height="15" alt=""/></a>
+						<ul>
+							<li><a href="#0" onclick="onHtmlClick('Doctors', 0)" class="btn_listing">View on Map</a></li>
+							<li><a href="https://www.google.com/maps/dir//Assistance+%E2%80%93+H%C3%B4pitaux+De+Paris,+3+Avenue+Victoria,+75004+Paris,+Francia/@48.8606548,2.3348734,14z/data=!4m15!1m6!3m5!1s0x0:0xa6a9af76b1e2d899!2sAssistance+%E2%80%93+H%C3%B4pitaux+De+Paris!8m2!3d48.8568376!4d2.3504305!4m7!1m0!1m5!1m1!1s0x47e67031f8c20147:0xa6a9af76b1e2d899!2m2!1d2.3504327!2d48.8568361" target="_blank">Directions</a></li>
+							<li><a t-attf-href="/docteur_patient/#{medecin.id}">Reserve maintenant</a></li>
+						</ul>
+					</div>
+				</t>
+					
+					<!-- /strip_list -->
+					
+					<nav aria-label="" class="add_top_20">
+						<ul class="pagination pagination-sm">
+							<li class="page-item disabled">
+								<a class="page-link" href="#" tabindex="-1">Previous</a>
+							</li>
+							<li class="page-item active"><a class="page-link" href="#">1</a></li>
+							<li class="page-item"><a class="page-link" href="#">2</a></li>
+							<li class="page-item"><a class="page-link" href="#">3</a></li>
+							<li class="page-item">
+								<a class="page-link" href="#">Next</a>
+							</li>
+						</ul>
+					</nav>
+					<!-- /pagination -->
+				</div>
+				<!-- /col -->
+				
+				<aside class="col-lg-5" id="sidebar">
+					<div id="map_listing" class="normal_list">
+					</div>
+				</aside>
+				<!-- /aside -->
+				
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</main>
+	<!-- /main -->
+	
+	
+	<!--/footer-->
+
+	<div id="toTop"></div>
+                
+                <script src="/webtemplate/static/js/jquery-3.5.1.min.js"></script>
+                <script src="/webtemplate/static/js/common_scripts.min.js"></script>
+                <script src="/webtemplate/static/js/functions.js"></script>
+
+          </body>
+
+
+        </template>
+    </data>
+</odoo>
