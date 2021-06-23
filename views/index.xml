@@ -40,25 +40,32 @@
                                             </div>
                                         </div>
                                         <nav class="col-lg-9 col-6">
-                                            <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="#0"><span>Menu mobile</span></a>
-                                            <ul id="top_access">
-                                                <li><a href="login.html"><i class="pe-7s-user"></i></a></li>
-                                                <li><a href="register-doctor.html"><i class="pe-7s-add-user"></i></a></li>
-                                            </ul>
-                                            <div class="main-menu">
-                                                <ul>
-                                                    <li class="submenu">
-                                                        <a href="/login" class="show-submenu"><i class="fas fa-user"></i></a>
-                                                    </li>
-                                                    <li class="submenu">
-                                                        <a href="/lsteRechercher" class="show-submenu"><i class="fas fa-heartbeat"></i></a>
-                                                    </li>
-                                                    <li class="submenu">
-                                                        <a href="booking-page.html" class="show-submenu"><i class="fas fa-history"></i></a>
-                                                    </li>
-                                                    <li><a href="#0"><i class="fas fa-user"></i></a></li>
+                                            <t t-if="userConnect">
+                                                    
+                                            </t>
+                                            <t t-else="">
+                                                <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="#0"><span>Menu mobile</span></a>
+                                                <ul id="top_access">
+                                                    <li><a href="/OpenMedecine"><i class="pe-7s-user"></i></a></li>
+                                                    <li><a href="register-doctor.html"><i class="pe-7s-add-user"></i></a></li>
                                                 </ul>
-                                            </div>
+                                                <div class="main-menu">
+
+                                                        <ul>                                               
+                                                            <li class="submenu">
+                                                                <a href="/login" class="show-submenu"><i class="fas fa-user"></i></a>
+                                                            </li>
+                                                            <li class="submenu">
+                                                                <a href="/lsteRechercher" class="show-submenu"><i class="fas fa-heartbeat"></i></a>
+                                                            </li>
+                                                            <li class="submenu">
+                                                                <a href="booking-page.html" class="show-submenu"><i class="fas fa-history"></i></a>
+                                                            </li>
+                                                            <li><a href="#0"><i class="fas fa-user"></i></a></li>
+                                                        </ul>
+                                                    
+                                                </div>
+                                            </t>
                                             <!-- /main-menu -->
                                         </nav>
                                     </div>

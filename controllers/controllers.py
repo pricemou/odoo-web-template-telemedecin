@@ -7,7 +7,12 @@ class OpenMedecin(http.Controller):
     @http.route('/detail-medecin/<int:medecin_id>', auth='public' ,website=True)
     def index(self, medecin_id):
         medecin_detail = http.request.env['medical.physician'].browse([medecin_id])
-        return http.request.render('webtemplate.detailMedecine', { 'medecin_detail': medecin_detail})
+        userConnect = http.request.session.uid
+
+        return http.request.render('webtemplate.detailMedecine', {
+             'medecin_detail': medecin_detail,
+             'userConnect': userConnect,
+        })
 
     @http.route('/booking-page', auth='public')
     def booking(self, **kw):
@@ -17,18 +22,37 @@ class OpenMedecin(http.Controller):
     @http.route('/docteur_patient/<int:medecin_id>', auth='public')
     def docteur_patient(self, medecin_id):
         userConnect = http.request.session.uid
+        listeSpeciaisation01 = []
+        listeSpeciaisation02 = []
+        cpt  = 0
 
         if userConnect:
             userConnectSatus = True
         else :
             userConnectSatus = False
 
-
         medecin_detail = http.request.env['medical.physician'].sudo().browse([medecin_id])
+         # add logging
+        _logger.info('------------------------')
+        for i in medecin_detail.education_ids:
+            cpt += cpt
+            specialisationName = http.request.env['medical.education'].sudo().browse([int(i)])
+            if cpt <= 4 :
+                listeSpeciaisation01.append(specialisationName.name)
+            elif cpt > 4 and cpt >= 8 :
+                listeSpeciaisation02.append(specialisationName.name)
+
+            
+        _logger.info(listeSpeciaisation01)
+        _logger.info('------------------------')
+        # add logging
+        
         return http.request.render('webtemplate.docteur_patient',
          {
             'medecin_detail': medecin_detail,
             'userConnect': userConnectSatus,
+            'liste1': listeSpeciaisation01,
+            'liste2': listeSpeciaisation02,
          }
         )
     
@@ -43,7 +67,10 @@ class OpenMedecin(http.Controller):
         userConect = http.request.session.uid
         userUconnect = http.request.env['res.users'].sudo().browse([userConect])
 
-        return http.request.render('webtemplate.medecin_connect', {'medecin': medecin.search([]), "user_id": userUconnect})
+        return http.request.render('webtemplate.medecin_connect', {
+            'medecin': medecin.search([]),
+            "user_id": userUconnect,
+            "userConnect": userConect,})
 
     # @http.route('/index', auth='public' ,website=True)
     # def booking(self, **kw):
@@ -259,8 +286,10 @@ class academacadem(http.Controller):
         medecin = http.request.env['medical.physician']
         pharmacie = http.request.env['medical.pharmacie']
         pharmacies = http.request.env['medical.pharmacie']
+        userConect = http.request.session.uid
     
         return http.request.render('webtemplate.index', {
             'medecin': medecin.sudo().search([],limit=6),
             'pharmacie': pharmacie.sudo().search([],limit=6),
+            'userConnect':userConect,
         })
