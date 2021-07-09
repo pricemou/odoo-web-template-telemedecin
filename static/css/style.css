@@ -159,14 +159,14 @@ Author URI: http://themeforest.net/user/Ansonika/
 48px= 3.428571429rem
 64px= 4.57142857rem
 72px= 5.142857143rem
-*/
+*/body
 html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: #fff;
+  /* background: #fff; */
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 1.4;
@@ -1587,7 +1587,7 @@ a.box_cat_home ul li strong {
 
 #app_section {
   background: #3f4079 url(../img/hero_bg_1.svg) repeat fixed;
-  padding: 90px 0 60px 0;
+  /* padding: 90px 0 60px 0; */
   color: #fff;
 }
 @media (max-width: 991px) {
@@ -5015,7 +5015,7 @@ ul.bullets li:before {
 }
 
 .margin_120_95 {
-  padding-top: 120px;
+  /* padding-top: 120px; */
   padding-bottom: 21px;
 }
 @media (max-width: 991px) {
@@ -5398,4 +5398,24 @@ ul#cat_nav li:last-child a:hover, ul#cat_nav li:last-child a#active, ul#cat_nav 
 #wrapwrap .o_header_affix.affixed {
   margin-top: 0px;
   display: none;
+}
+
+.margin_120_95_5 {
+  padding-top: 120px;
+  padding-bottom: 21px;
+}
+
+.consltation-hopitale{
+  padding: 2px;
+}
+
+
+
+@media (max-width: 767px) {
+  .cadre{
+   display: none;
+  }
+  .navbar-brand .logo {
+    margin-top: 0px;
+}
 }

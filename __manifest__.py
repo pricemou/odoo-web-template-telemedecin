@@ -41,6 +41,7 @@
         'views/profil_docteur_patient.xml',
         'views/confirmation.xml',
         'views/confirmer_dorcteur.xml',
+        'views/medecineAdomicile.xml',
         'views/videoconferance.xml',
         'security/ir.model.access.csv',
 

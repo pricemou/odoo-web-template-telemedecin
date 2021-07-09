@@ -1,34 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo> 
    <template id="index">
-   <meta charset="utf-8"/>
-   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-   <meta name="description" content="Find easily a doctor and book online an appointment"/>
-   <meta name="author" content="Ansonika"/>
-   <title>Open Medecine</title>
+    <xpath expr="//link[last()]" position="after" > 
+            <meta charset="utf-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+            <meta name="description" content="Find easily a doctor and book online an appointment"/>
+            <meta name="author" content="Ansonika"/>
+            <title>Open Medecine</title>
 
-   <!-- Favicons-->
-   <link rel="shortcut icon" href="/webtemplate/static/img/favicon.ico" type="image/x-icon"/>
-   <link rel="apple-touch-icon" type="image/x-icon" href="/webtemplate/static/img/apple-touch-icon-57x57-precomposed.png"/>
-   <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="/webtemplate/static/img/apple-touch-icon-72x72-precomposed.png"/>
-   <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="/webtemplate/static/img/apple-touch-icon-114x114-precomposed.png"/>
-   <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="/webtemplate/static/img/apple-touch-icon-144x144-precomposed.png"/>
-   
-   <!-- GOOGLE WEB FONT -->
-   <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/> -->
-   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+            
+            
+            <!-- GOOGLE WEB FONT -->
+            <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/> -->
+            <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-   <!-- BASE CSS -->
-   <link href="/webtemplate/static/css/bootstrap.min.css" rel="stylesheet"/>
-   <link href="/webtemplate/static/css/style.css" rel="stylesheet"/>
-   <link href="/webtemplate/static/css/menu.css" rel="stylesheet"/>
-   <link href="/webtemplate/static/css/vendors.css" rel="stylesheet"/>
-   <link href="/webtemplate/static/css/icon_fonts/css/all_icons_min.css" rel="stylesheet"/>
-   
-   <!-- YOUR CUSTOM CSS -->
-   <link href="/webtemplate/static/css/custom1.css" rel="stylesheet"/>
-           
+             <!-- BASE CSS -->
+            <link href="/webtemplate/static/css/bootstrap.min.css" rel="stylesheet"/>
+            <link href="/webtemplate/static/css/style.css" rel="stylesheet"/>
+            <link href="/webtemplate/static/css/menu.css" rel="stylesheet"/>
+            <link href="/webtemplate/static/css/vendors.css" rel="stylesheet"/>
+            <link href="/webtemplate/static/css/icon_fonts/css/all_icons_min.css" rel="stylesheet"/>
+                        
+            <!-- YOUR CUSTOM CSS -->
+            <link href="/webtemplate/static/css/custom.css" rel="stylesheet"/>
+
+          </xpath>
         <body>
                     
                             <header class="header_sticky">
@@ -108,7 +105,7 @@
                                                             <a href="#" class=""><img src="/webtemplate/static/img/icon-home-3.svg" alt="" id="call"/></a>
                                                         </div>
                                                         <div class="card-footer">
-                                                            <h5>Consultation à l'hôpital</h5>
+                                                            <h5 class="consltation-hopitale">Consultation à l'hôpital</h5>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -174,49 +171,106 @@
                                             </div>
                                         </div>
                                     </div>
-                            
-                                    <p class="text-center"><a href="#" class="btn_1 medium">Trouver un médecin</a></p>
-
                                 </div>
 
                                 <!-- ======= Services Section ======= -->
-                                <section id="services" class="services services">
-                                    <div class="container" data-aos="fade-up">
-                            
-                                        <div class="section-title">
-                                            <h2 class="textService">Fonctionnalités disponibles</h2>
-                                        </div>
-                                        
-                
-                                        <div class="row">
-                                            <div class="col-lg-2 col-md-3   col-3  con-box" data-aos="zoom-in" data-aos-delay="100">
-                                                <div class="con"><img src="/webtemplate/static/img/Groupe -1.png" class="room" alt=""/></div>
-                                            </div>
-                                            <div class="col-lg-2 col-md-3   col-3 con-box" data-aos="zoom-in" data-aos-delay="200">
-                                                <div class="con"><img src="/webtemplate/static/img/Groupe -2.png" class="room" alt=""/></div>
-                                            </div>
-                                            <div class="col-lg-2 col-md-3   col-3 con-box" data-aos="zoom-in" data-aos-delay="300">
-                                                <div class="con"><img src="/webtemplate/static/img/Groupe -4.png" class="room" alt=""/></div>
-                                            </div>
-                                            <div class="col-lg-2 col-md-   col-3 con-box" data-aos="zoom-in" data-aos-delay="100">
-                                                <div class="con"><img src="/webtemplate/static/img/Groupe -5.png" class="room" alt=""/></div>
-                                            </div>
-                                            <div class="col-lg-2 col-md-3   col-3 con-box" data-aos="zoom-in" data-aos-delay="200">
-                                                <div class="con"><img src="/webtemplate/static/img/Groupe -6.png" class="room" alt=""/></div>
-                                            </div>
-                                            <div class="col-lg-2 col-md-3   col-3 con-box" data-aos="zoom-in" data-aos-delay="300">
-                                                <div class="con"><img src="/webtemplate/static/img/Groupe 16917.png" class="room" alt=""/></div>
-                                            </div>
-                                            <div class="col-lg-2 col-md-3  col-3 con-box" data-aos="zoom-in" data-aos-delay="200">
-                                                <div class="con"><img src="/webtemplate/static/img/Groupe -6.png" class="room" alt=""/></div>
-                                            </div>
-                                            <div class="col-lg-2 col-md-3   col-3 con-box" data-aos="zoom-in" data-aos-delay="200">
-                                                <div class="con"><img src="/webtemplate/static/img/Groupe -2.png" class="room" alt=""/></div>
-                                            </div>
-                                        </div>
-                            
+                                <div class="container margin_120_95">
+                                    <div class="main_title">
+                                        <h2 class="rr">SPÉCIALISATION</h2>
+                                        <!-- <p>Nec graeci sadipscing disputationi ne, mea ea nonumes percipitur. Nonumy ponderum oporteat cu mel, pro movet cetero at.</p> -->
                                     </div>
-                                </section>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-6">
+                                            <a href="#0" class="box_cat_home">
+                                                <i class="icon-info-4"></i>
+                                                <img src="/webtemplate/static/img/icon_cat_1.svg" width="60" height="60" alt=""/>
+                                                <h3>Premiers soins</h3>
+                                                <ul class="clearfix">
+                                                    <li><strong>124</strong>Médecins</li>
+                                                    <li><strong>60</strong>Cliniques</li>
+                                                </ul>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6">
+                                            <a href="#0" class="box_cat_home">
+                                                <i class="icon-info-4"></i>
+                                                <img src="/webtemplate/static/img/icon_cat_2.svg" width="60" height="60" alt=""/>
+                                                <h3>Cardiologie</h3>
+                                                <ul class="clearfix">
+                                                    <li><strong>124</strong>Médecins</li>
+                                                    <li><strong>60</strong>Cliniques</li>
+                                                </ul>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6">
+                                            <a href="#0" class="box_cat_home">
+                                                <i class="icon-info-4"></i>
+                                                <img src="/webtemplate/static/img/icon_cat_3.svg" width="60" height="60" alt=""/>
+                                                <h3>Résonance IRM</h3>
+                                                <ul class="clearfix">
+                                                    <li><strong>124</strong>Médecins</li>
+                                                    <li><strong>60</strong>Cliniques</li>
+                                                </ul>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6">
+                                            <a href="#0" class="box_cat_home">
+                                                <i class="icon-info-4"></i>
+                                                <img src="/webtemplate/static/img/icon_cat_4.svg" width="60" height="60" alt=""/>
+                                                <h3>Test sanguin</h3>
+                                                <ul class="clearfix">
+                                                    <li><strong>124</strong>Médecins</li>
+                                                    <li><strong>60</strong>Cliniques</li>
+                                                </ul>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6">
+                                            <a href="#0" class="box_cat_home">
+                                                <i class="icon-info-4"></i>
+                                                <img src="/webtemplate/static/img/icon_cat_7.svg" width="60" height="60" alt=""/>
+                                                <h3>Laboratoire</h3>
+                                                <ul class="clearfix">
+                                                    <li><strong>124</strong>Médecins</li>
+                                                    <li><strong>60</strong>Cliniques</li>
+                                                </ul>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6">
+                                            <a href="#0" class="box_cat_home">
+                                                <i class="icon-info-4"></i>
+                                                <img src="/webtemplate/static/img/icon_cat_5.svg" width="60" height="60" alt=""/>
+                                                <h3>Dentisterie</h3>
+                                                <ul class="clearfix">
+                                                    <li><strong>124</strong>Médecins</li>
+                                                    <li><strong>60</strong>Cliniques</li>
+                                                </ul>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6">
+                                            <a href="#0" class="box_cat_home">
+                                                <i class="icon-info-4"></i>
+                                                <img src="/webtemplate/static/img/icon_cat_6.svg" width="60" height="60" alt=""/>
+                                                <h3>X - Rayon</h3>
+                                                <ul class="clearfix">
+                                                    <li><strong>124</strong>Médecins</li>
+                                                    <li><strong>60</strong>Cliniques</li>
+                                                </ul>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6">
+                                            <a href="#0" class="box_cat_home">
+                                                <i class="icon-info-4"></i>
+                                                <img src="/webtemplate/static/img/icon_cat_8.svg" width="60" height="60" alt=""/>
+                                                <h3>Piscologue</h3>
+                                                <ul class="clearfix">
+                                                    <li><strong>124</strong>Médecins</li>
+                                                    <li><strong>60</strong>Cliniques</li>
+                                                </ul>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- /row -->
+                                </div>
 
                                 <div class="bg_color_1">
                                     <div class="container margin_120_95">
@@ -297,7 +351,7 @@
 
                                 <main>
                                     <div id="hero_register">
-                                        <div class="container margin_120_95">			
+                                        <div class="container margin_120_95_5">			
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <h1>Prenez un rendez-vous</h1>

@@ -15,18 +15,15 @@
             <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="/webtemplate/static/img/apple-touch-icon-72x72-precomposed.png"/>
             <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="/webtemplate/static/img/apple-touch-icon-114x114-precomposed.png"/>
             <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="/webtemplate/static/img/apple-touch-icon-144x144-precomposed.png"/>
-            
-            <!-- GOOGLE WEB FONT -->
-            <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/> -->
             <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-            <!-- BASE CSS -->
+           <!-- BASE CSS -->
             <link href="/webtemplate/static/css/bootstrap.min.css" rel="stylesheet"/>
             <link href="/webtemplate/static/css/style.css" rel="stylesheet"/>
             <link href="/webtemplate/static/css/menu.css" rel="stylesheet"/>
             <link href="/webtemplate/static/css/vendors.css" rel="stylesheet"/>
             <link href="/webtemplate/static/css/icon_fonts/css/all_icons_min.css" rel="stylesheet"/>
-            
+                        
             <!-- YOUR CUSTOM CSS -->
             <link href="/webtemplate/static/css/custom.css" rel="stylesheet"/>
 
@@ -47,7 +44,7 @@
 
                     <!-- custom Header -->
                         <body>
-                            
+                    
                             <header class="header_sticky">
                                 <div class="container">
                                     <div class="row">
@@ -57,25 +54,32 @@
                                             </div>
                                         </div>
                                         <nav class="col-lg-9 col-6">
-                                            <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="#0"><span>Menu mobile</span></a>
-                                            <ul id="top_access">
-                                                <li><a href="login.html"><i class="pe-7s-user"></i></a></li>
-                                                <li><a href="register-doctor.html"><i class="pe-7s-add-user"></i></a></li>
-                                            </ul>
-                                            <div class="main-menu">
-                                                <ul>
-                                                    <li class="submenu">
-                                                        <a href="/login" class="show-submenu"><i class="fas fa-user"></i></a>
-                                                    </li>
-                                                    <li class="submenu">
-                                                        <a href="/lsteRechercher" class="show-submenu"><i class="fas fa-heartbeat"></i></a>
-                                                    </li>
-                                                    <li class="submenu">
-                                                        <a href="booking-page.html" class="show-submenu"><i class="fas fa-history"></i></a>
-                                                    </li>
-                                                    <li><a href="#0"><i class="fas fa-user"></i></a></li>
+                                            <t t-if="userConnect">
+                                                    
+                                            </t>
+                                            <t t-else="">
+                                                <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="#0"><span>Menu mobile</span></a>
+                                                <ul id="top_access">
+                                                    <li><a href="/OpenMedecine"><i class="pe-7s-user"></i></a></li>
+                                                    <li><a href="register-doctor.html"><i class="pe-7s-add-user"></i></a></li>
                                                 </ul>
-                                            </div>
+                                                <div class="main-menu">
+
+                                                        <ul>                                               
+                                                            <li class="submenu">
+                                                                <a href="/login" class="show-submenu"><i class="fas fa-user"></i></a>
+                                                            </li>
+                                                            <li class="submenu">
+                                                                <a href="/lsteRechercher" class="show-submenu"><i class="fas fa-heartbeat"></i></a>
+                                                            </li>
+                                                            <li class="submenu">
+                                                                <a href="booking-page.html" class="show-submenu"><i class="fas fa-history"></i></a>
+                                                            </li>
+                                                            <li><a href="#0"><i class="fas fa-user"></i></a></li>
+                                                        </ul>
+                                                    
+                                                </div>
+                                            </t>
                                             <!-- /main-menu -->
                                         </nav>
                                     </div>
@@ -89,14 +93,14 @@
                                 <div class="hero_home version_3">
                                     <div class="content">
                                         <div class="container dispart">
-                                            <div class="row">
+                                            <div class="row cadre">
                                                 <div class="col-md-4">
                                                     <div class="card">
                                                         <div class="card-body">
-                                                            <a href="/medecin/connect" class=""><img src="/webtemplate/static/img/icon-home-2.svg" alt="" id="call"/></a>
+                                                            <a href="/medecin_connect" class=""><img src="/webtemplate/static/img/icon-home-2.svg" alt="" id="call"/></a>
                                                         </div>
                                                         <div class="card-footer">
-                                                            <h5 style="padding: 11px;"> Téléconsultation <br></br> </h5>
+                                                            <h5 style="padding: 3px;font-size: 20px;"> Téléconsultation <br></br> </h5>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -118,7 +122,7 @@
                                                             <a href="#" class=""><img src="/webtemplate/static/img/icon-home-3.svg" alt="" id="call"/></a>
                                                         </div>
                                                         <div class="card-footer">
-                                                            <h5>Consultation à l'hôpital</h5>
+                                                            <h5 class="consltation-hopitale">Consultation à l'hôpital</h5>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -137,12 +141,11 @@
                                     <div class="row add_bottom_30">
                                         
                                         <div class="col-lg-4 col-sm-4 col-4">
-                                        <a href="/medecin/connect">
+                                        <a href="/medecin_connect">
                                             <div class="box_feat1" id="icon_3">
                                              
                                                 <span></span>
-                                                <h3>Téléconsultation</h3>
-                                                <p>Réservez un consultation vidéo avec un professionnel de santé.</p>
+                                                
                                             </div>
                                             </a>
 
@@ -152,14 +155,12 @@
                                         <div class="col-lg-4 col-sm-4 col-4">
                                             <div class="box_feat1" id="icon_2">
                                                 <span></span>
-                                                <h3>Consultation à l'hopital </h3>
-                                                <p>Réservez un consultation physique avec un professionnel de santé.</p>
+                                                
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-sm-4 col-4">
                                             <div class="box_feat1" id="icon_2">
-                                                <h3>Consultation à domicile</h3>
-                                                <p>Réservez un consultation physique avec un professionnel de santé.</p>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -187,216 +188,169 @@
                                             </div>
                                         </div>
                                     </div>
-                            
-                                    <p class="text-center"><a href="#" class="btn_1 medium">Trouver un médecin</a></p>
-
                                 </div>
 
                                 <!-- ======= Services Section ======= -->
-                                <section id="services" class="services services">
-                                    <div class="container" data-aos="fade-up">
-                            
-                                        <div class="section-title">
-                                            <h2 class="textService">Fonctionnalités disponibles</h2>
-                                        </div>
-                                
-                                        <div class="row">
-                                            <div class="col-lg-2 col-md-3   col-3  con-box" data-aos="zoom-in" data-aos-delay="100">
-                                                <div class="con"><img src="/webtemplate/static/img/Groupe -1.png" class="room" alt=""/></div>
-                                            </div>
-                                            <div class="col-lg-2 col-md-3   col-3 con-box" data-aos="zoom-in" data-aos-delay="200">
-                                                <div class="con"><img src="/webtemplate/static/img/Groupe -2.png" class="room" alt=""/></div>
-                                            </div>
-                                            <div class="col-lg-2 col-md-3   col-3 con-box" data-aos="zoom-in" data-aos-delay="300">
-                                                <div class="con"><img src="/webtemplate/static/img/Groupe -4.png" class="room" alt=""/></div>
-                                            </div>
-                                            <div class="col-lg-2 col-md-   col-3 con-box" data-aos="zoom-in" data-aos-delay="100">
-                                                <div class="con"><img src="/webtemplate/static/img/Groupe -5.png" class="room" alt=""/></div>
-                                            </div>
-                                            <div class="col-lg-2 col-md-3   col-3 con-box" data-aos="zoom-in" data-aos-delay="200">
-                                                <div class="con"><img src="/webtemplate/static/img/Groupe -6.png" class="room" alt=""/></div>
-                                            </div>
-                                            <div class="col-lg-2 col-md-3   col-3 con-box" data-aos="zoom-in" data-aos-delay="300">
-                                                <div class="con"><img src="/webtemplate/static/img/Groupe 16917.png" class="room" alt=""/></div>
-                                            </div>
-                                            <div class="col-lg-2 col-md-3  col-3 con-box" data-aos="zoom-in" data-aos-delay="200">
-                                                <div class="con"><img src="/webtemplate/static/img/Groupe -6.png" class="room" alt=""/></div>
-                                            </div>
-                                            <div class="col-lg-2 col-md-3   col-3 con-box" data-aos="zoom-in" data-aos-delay="200">
-                                                <div class="con"><img src="/webtemplate/static/img/Groupe -2.png" class="room" alt=""/></div>
-                                            </div>
-                                        </div>
-                            
+                                <div class="container margin_120_95">
+                                    <div class="main_title">
+                                        <h2 class="rr">SPÉCIALISATION</h2>
+                                        <!-- <p>Nec graeci sadipscing disputationi ne, mea ea nonumes percipitur. Nonumy ponderum oporteat cu mel, pro movet cetero at.</p> -->
                                     </div>
-                                </section>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-6">
+                                            <a href="#0" class="box_cat_home">
+                                                <i class="icon-info-4"></i>
+                                                <img src="/webtemplate/static/img/icon_cat_1.svg" width="60" height="60" alt=""/>
+                                                <h3>Premiers soins</h3>
+                                                <ul class="clearfix">
+                                                    <li><strong>124</strong>Médecins</li>
+                                                    <li><strong>60</strong>Cliniques</li>
+                                                </ul>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6">
+                                            <a href="#0" class="box_cat_home">
+                                                <i class="icon-info-4"></i>
+                                                <img src="/webtemplate/static/img/icon_cat_2.svg" width="60" height="60" alt=""/>
+                                                <h3>Cardiologie</h3>
+                                                <ul class="clearfix">
+                                                    <li><strong>124</strong>Médecins</li>
+                                                    <li><strong>60</strong>Cliniques</li>
+                                                </ul>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6">
+                                            <a href="#0" class="box_cat_home">
+                                                <i class="icon-info-4"></i>
+                                                <img src="/webtemplate/static/img/icon_cat_3.svg" width="60" height="60" alt=""/>
+                                                <h3>Résonance IRM</h3>
+                                                <ul class="clearfix">
+                                                    <li><strong>124</strong>Médecins</li>
+                                                    <li><strong>60</strong>Cliniques</li>
+                                                </ul>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6">
+                                            <a href="#0" class="box_cat_home">
+                                                <i class="icon-info-4"></i>
+                                                <img src="/webtemplate/static/img/icon_cat_4.svg" width="60" height="60" alt=""/>
+                                                <h3>Test sanguin</h3>
+                                                <ul class="clearfix">
+                                                    <li><strong>124</strong>Médecins</li>
+                                                    <li><strong>60</strong>Cliniques</li>
+                                                </ul>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6">
+                                            <a href="#0" class="box_cat_home">
+                                                <i class="icon-info-4"></i>
+                                                <img src="/webtemplate/static/img/icon_cat_7.svg" width="60" height="60" alt=""/>
+                                                <h3>Laboratoire</h3>
+                                                <ul class="clearfix">
+                                                    <li><strong>124</strong>Médecins</li>
+                                                    <li><strong>60</strong>Cliniques</li>
+                                                </ul>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6">
+                                            <a href="#0" class="box_cat_home">
+                                                <i class="icon-info-4"></i>
+                                                <img src="/webtemplate/static/img/icon_cat_5.svg" width="60" height="60" alt=""/>
+                                                <h3>Dentisterie</h3>
+                                                <ul class="clearfix">
+                                                    <li><strong>124</strong>Médecins</li>
+                                                    <li><strong>60</strong>Cliniques</li>
+                                                </ul>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6">
+                                            <a href="#0" class="box_cat_home">
+                                                <i class="icon-info-4"></i>
+                                                <img src="/webtemplate/static/img/icon_cat_6.svg" width="60" height="60" alt=""/>
+                                                <h3>X - Rayon</h3>
+                                                <ul class="clearfix">
+                                                    <li><strong>124</strong>Médecins</li>
+                                                    <li><strong>60</strong>Cliniques</li>
+                                                </ul>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6">
+                                            <a href="#0" class="box_cat_home">
+                                                <i class="icon-info-4"></i>
+                                                <img src="/webtemplate/static/img/icon_cat_8.svg" width="60" height="60" alt=""/>
+                                                <h3>Piscologue</h3>
+                                                <ul class="clearfix">
+                                                    <li><strong>124</strong>Médecins</li>
+                                                    <li><strong>60</strong>Cliniques</li>
+                                                </ul>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- /row -->
+                                </div>
 
                                 <div class="bg_color_1">
                                     <div class="container margin_120_95">
                                         <div class="main_title">
-                                            <h2>Réservez votre médecin</h2>
-                                            <p>Réservez un consultation physique ou vidéo avec un professionnelde santé.</p>
+                                            <h2>Réservez notre médecin</h2>
+                                            <p>Trouvez un médecin généraliste (ou un professionnel pratiquant des actes de médecine générale) et réservez en ligne</p>
                                         </div>
+
                                         <div class="row">
+                                        <t t-foreach="medecin" t-as="medecin">
                                             <div class="col-lg-4 col-md-6 col-6">
                                                 <div class="box_list home">
                                                     <a href="#0" data-toggle="tooltip" data-placement="top" title="Add to wishlist" class="wish_bt"></a>
                                                     <figure>
 
-                                                        <a href="/detail-medecin"><img src="/webtemplate/static/img/01.jpg" class="img-fluid" alt=""/></a>
+                                                        <a href="/detail-medecin"><img t-att-src="'data:image/png;base64,%s' % to_text(medecin.partner_id.image)" class="img-fluid" /></a>
                                                         <div class="preview"><span>Lire la suite</span></div>
                                                     </figure>
                                                     <div class="wrapper">
-                                                        <small>PSYCHOLOGUE</small>
-                                                        <h3>Dr. Watamaniuk</h3>
-                                                        <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cuodo....</p>
+                                                        <small><t t-esc="medecin.speciality_id.name"/></small>
+                                                        <h3><t t-esc="medecin.partner_id.name"/></h3>
+                                                        <p><t t-esc="medecin.info"/></p>
                                                         <span class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i> <small>(145)</small></span>
                                                         <a href="#0" data-toggle="tooltip" data-placement="top" data-original-title="Badge Level" class="badge_list_1"><img src="/webtemplate/static/img/badges/badge_1.svg" width="15" height="15" alt=""/></a>
                                                     </div>
                                                     <ul>
                                                         <li class="views"> <i class="icon-eye-7"></i> 811 Vues</li>
-                                                        <li><a href="/detail-medecin">Reserver</a></li>
+                                                        <!-- <li><a t-attf-href="/detail-medecin/#{medecin.id}">Reserver</a></li> -->
+                                                        <li><a t-attf-href="/docteur_patient/#{medecin.id}">Reserver</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
-
-                                            <div class="col-lg-4 col-md-6 col-6">
-                                                <div class="box_list home">
-                                                    <a href="#0" data-toggle="tooltip" data-placement="top" title="Add to wishlist" class="wish_bt"></a>
-                                                    <figure>
-
-                                                        <a href="/detail-medecin"><img src="/webtemplate/static/img/02.jpg" class="img-fluid" alt=""/></a>
-                                                        <div class="preview"><span>Lire la suite</span></div>
-                                                    </figure>
-                                                    <div class="wrapper">
-                                                        <small>PSYCHOLOGUE</small>
-                                                        <h3>Dr. Mantooth</h3>
-                                                        <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cuodo....</p>
-                                                        <span class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i> <small>(145)</small></span>
-                                                        <a href="#0" data-toggle="tooltip" data-placement="top" data-original-title="Badge Level" class="badge_list_1"><img src="/webtemplate/static/img/badges/badge_1.svg" width="15" height="15" alt=""/></a>
-                                                    </div>
-                                                    <ul>
-                                                        <li class="claude"><i class="icon-eye-7"></i> 854 Vues</li>
-                                                        <li><a href="/detail-medecin">Reserver</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 col-6">
-                                                <div class="box_list home">
-                                                    <a href="#0" data-toggle="tooltip" data-placement="top" title="Add to wishlist" class="wish_bt"></a>
-                                                    <figure>
-
-                                                        <a href="/detail-medecin"><img src="/webtemplate/static/img/03.jpg" class="img-fluid" alt=""/></a>
-                                                        <div class="preview"><span>Lire la suite</span></div>
-                                                    </figure>
-                                                    <div class="wrapper">
-                                                        <small>PSYCHOLOGUE</small>
-                                                        <h3>Dr. Mantooth</h3>
-                                                        <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cuodo....</p>
-                                                        <span class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i> <small>(145)</small></span>
-                                                        <a href="#0" data-toggle="tooltip" data-placement="top" data-original-title="Badge Level" class="badge_list_1"><img src="/webtemplate/static/img/badges/badge_1.svg" width="15" height="15" alt=""/></a>
-                                                    </div>
-                                                    <ul>
-                                                        <li class="claude"><i class="icon-eye-7"></i> 854 Vues</li>
-                                                        <li><a href="/detail-medecin">Reserver</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 col-6">
-                                                <div class="box_list home">
-                                                    <a href="#0" data-toggle="tooltip" data-placement="top" title="Add to wishlist" class="wish_bt"></a>
-                                                    <figure>
-
-                                                        <a href="detail-page-2.xml"><img src="/webtemplate/static/img/04.jpg" class="img-fluid" alt=""/></a>
-                                                        <div class="preview"><span>Lire la suite</span></div>
-                                                    </figure>
-                                                    <div class="wrapper">
-                                                        <small>PSYCHOLOGUE</small>
-                                                        <h3>Dr. Mantooth</h3>
-                                                        <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cuodo....</p>
-                                                        <span class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i> <small>(145)</small></span>
-                                                        <a href="#0" data-toggle="tooltip" data-placement="top" data-original-title="Badge Level" class="badge_list_1"><img src="/webtemplate/static/img/badges/badge_1.svg" width="15" height="15" alt=""/></a>
-                                                    </div>
-                                                    <ul>
-                                                        <li class="claude"><i class="icon-eye-7"></i> 854 Vues</li>
-                                                        <li><a href="/detail-medecin">Reserver</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 col-6">
-                                                <div class="box_list home">
-                                                    <a href="#0" data-toggle="tooltip" data-placement="top" title="Add to wishlist" class="wish_bt"></a>
-                                                    <figure>
-
-                                                        <a href="/detail-medecin"><img src="/webtemplate/static/img/05.jpg" class="img-fluid" alt=""/></a>
-                                                        <div class="preview"><span>Lire la suite</span></div>
-                                                    </figure>
-                                                    <div class="wrapper">
-                                                        <small>PSYCHOLOGUE</small>
-                                                        <h3>Dr. Mantooth</h3>
-                                                        <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cuodo....</p>
-                                                        <span class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i> <small>(145)</small></span>
-                                                        <a href="#0" data-toggle="tooltip" data-placement="top" data-original-title="Badge Level" class="badge_list_1"><img src="/webtemplate/static/img/badges/badge_1.svg" width="15" height="15" alt=""/></a>
-                                                    </div>
-                                                    <ul>
-                                                        <li class="claude"><i class="icon-eye-7"></i> 854 Vues</li>
-                                                        <li><a href="/detail-medecin">Reserver</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 col-6">
-                                                <div class="box_list home">
-                                                    <a href="#0" data-toggle="tooltip" data-placement="top" title="Add to wishlist" class="wish_bt"></a>
-                                                    <figure>
-
-                                                        <a href="/detail-medecin"><img src="/webtemplate/static/img/06.jpg" class="img-fluid" alt=""/></a>
-                                                        <div class="preview"><span>Lire la suite</span></div>
-                                                    </figure>
-                                                    <div class="wrapper">
-                                                        <small>PSYCHOLOGUE</small>
-                                                        <h3>Dr. Mantooth</h3>
-                                                        <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cuodo....</p>
-                                                        <span class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i> <small>(145)</small></span>
-                                                        <a href="#0" data-toggle="tooltip" data-placement="top" data-original-title="Badge Level" class="badge_list_1"><img src="/webtemplate/static/img/badges/badge_1.svg" width="15" height="15" alt=""/></a>
-                                                    </div>
-                                                    <ul>
-                                                        <li class="claude"><i class="icon-eye-7"></i> 854 Vues</li>
-                                                        <li><a href="/detail-medecin">Reserver</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-
+                                        </t>
                                         </div>
                                         <!-- /row -->
                                     </div>
                                     <!-- /container -->
                                 </div>
+
                                 <!-- /white_bg -->
 
 
-                                <div class="bg_color_1">
+                                   	<div class="bg_color_1">
                                     <div class="container margin_120_95">
                                         <div class="main_title">
                                             <h2>PHARMACIES À PROXIMITÉ</h2>
-                                            <p>Usu habeo equidem sanctus no. Suas summo id sed, erat erant oporteat cu pri.</p>
+                                            <p>Trouvez tous vos pharmacies à les plus proches</p>
                                         </div>
+
                                         <div class="row">
+                                         <t t-foreach="pharmacie" t-as="pharmacies">
                                             <div class="col-lg-4 col-md-6 col-6">
                                                 <div class="box_list home">
                                                     <a href="#0" data-toggle="tooltip" data-placement="top" title="Add to wishlist" class="wish_bt"></a>
                                                     <figure>
 
-                                                        <a href="/detail-medecin"><img src="/webtemplate/static/img/0P1.jpg" class="img-fluid" alt=""/></a>
+                                                        <a href="/detail-medecin"><img t-att-src="'data:image/png;base64,%s' % to_text(pharmacies.pharmacie_id.image)" class="img-fluid" /></a>
                                                         <div class="preview"><span>Lire la suite</span></div>
                                                     </figure>
                                                     <div class="wrapper">
-                                                        <small>PSYCHOLOGUE</small>
-                                                        <h3>pharmacie sainte st bernard </h3>
-                                                        <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cuodo....</p>
+                                                        <small><t t-esc="pharmacies.pharmacie_id.name"/></small>
+                                                        <h3><t t-esc="pharmacies.pharmacie_id.name"/></h3>
+                                                        <p><t t-esc="pharmacies.info"/></p>
                                                         <span class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i> <small>(145)</small></span>
                                                         <a href="#0" data-toggle="tooltip" data-placement="top" data-original-title="Badge Level" class="badge_list_1"><img src="/webtemplate/static/img/badges/badge_1.svg" width="15" height="15" alt=""/></a>
                                                     </div>
@@ -406,230 +360,40 @@
                                                     </ul>
                                                 </div>
                                             </div>
-
-                                            <div class="col-lg-4 col-md-6 col-6">
-                                                <div class="box_list home">
-                                                    <a href="#0" data-toggle="tooltip" data-placement="top" title="Add to wishlist" class="wish_bt"></a>
-                                                    <figure>
-
-                                                        <a href="/detail-medecin"><img src="/webtemplate/static/img/0P2.jpg" class="img-fluid" alt=""/></a>
-                                                        <div class="preview"><span>Lire la suite</span></div>
-                                                    </figure>
-                                                    <div class="wrapper">
-                                                        <small>PSYCHOLOGUE</small>
-                                                        <h3>pharmacie de port</h3>
-                                                        <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cuodo....</p>
-                                                        <span class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i> <small>(145)</small></span>
-                                                        <a href="#0" data-toggle="tooltip" data-placement="top" data-original-title="Badge Level" class="badge_list_1"><img src="/webtemplate/static/img/badges/badge_1.svg" width="15" height="15" alt=""/></a>
-                                                    </div>
-                                                    <ul>
-                                                        <li class="claude"><i class="icon-eye-7"></i> 854 Vues</li>
-                                                        <li><a href="/detail-medecin">Reserver</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 col-6">
-                                                <div class="box_list home">
-                                                    <a href="#0" data-toggle="tooltip" data-placement="top" title="Add to wishlist" class="wish_bt"></a>
-                                                    <figure>
-
-                                                        <a href="/detail-medecin"><img src="/webtemplate/static/img/0P3.jpg" class="img-fluid" alt=""/></a>
-                                                        <div class="preview"><span>Lire la suite</span></div>
-                                                    </figure>
-                                                    <div class="wrapper">
-                                                        <small>PSYCHOLOGUE</small>
-                                                        <h3>pharmacie saint martin</h3>
-                                                        <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cuodo....</p>
-                                                        <span class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i> <small>(145)</small></span>
-                                                        <a href="#0" data-toggle="tooltip" data-placement="top" data-original-title="Badge Level" class="badge_list_1"><img src="/webtemplate/static/img/badges/badge_1.svg" width="15" height="15" alt=""/></a>
-                                                    </div>
-                                                    <ul>
-                                                        <li class="claude"><i class="icon-eye-7"></i> 854 Vues</li>
-                                                        <li><a href="/detail-medecin">Reserver</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 col-6">
-                                                <div class="box_list home">
-                                                    <a href="#0" data-toggle="tooltip" data-placement="top" title="Add to wishlist" class="wish_bt"></a>
-                                                    <figure>
-
-                                                        <a href="detail-page-2.xml"><img src="/webtemplate/static/img/0P4.jpg" class="img-fluid" alt=""/></a>
-                                                        <div class="preview"><span>Lire la suite</span></div>
-                                                    </figure>
-                                                    <div class="wrapper">
-                                                        <small>PSYCHOLOGUE</small>
-                                                        <h3>pharmacie riviera 3</h3>
-                                                        <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cuodo....</p>
-                                                        <span class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i> <small>(145)</small></span>
-                                                        <a href="#0" data-toggle="tooltip" data-placement="top" data-original-title="Badge Level" class="badge_list_1"><img src="/webtemplate/static/img/badges/badge_1.svg" width="15" height="15" alt=""/></a>
-                                                    </div>
-                                                    <ul>
-                                                        <li class="claude"><i class="icon-eye-7"></i> 854 Vues</li>
-                                                        <li><a href="/detail-medecin">Reserver</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 col-6">
-                                                <div class="box_list home">
-                                                    <a href="#0" data-toggle="tooltip" data-placement="top" title="Add to wishlist" class="wish_bt"></a>
-                                                    <figure>
-
-                                                        <a href="/detail-medecin"><img src="/webtemplate/static/img/0P5.jpg" class="img-fluid" alt=""/></a>
-                                                        <div class="preview"><span>Lire la suite</span></div>
-                                                    </figure>
-                                                    <div class="wrapper">
-                                                        <small>PSYCHOLOGUE</small>
-                                                        <h3>pharmacie st joseph</h3>
-                                                        <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cuodo....</p>
-                                                        <span class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i> <small>(145)</small></span>
-                                                        <a href="#0" data-toggle="tooltip" data-placement="top" data-original-title="Badge Level" class="badge_list_1"><img src="/webtemplate/static/img/badges/badge_1.svg" width="15" height="15" alt=""/></a>
-                                                    </div>
-                                                    <ul>
-                                                        <li class="claude"><i class="icon-eye-7"></i> 854 Vues</li>
-                                                        <li><a href="/detail-medecin">Reserver</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 col-6">
-                                                <div class="box_list home">
-                                                    <a href="#0" data-toggle="tooltip" data-placement="top" title="Add to wishlist" class="wish_bt"></a>
-                                                    <figure>
-
-                                                        <a href="/detail-medecin"><img src="/webtemplate/static/img/0P6.jpg" class="img-fluid" alt=""/></a>
-                                                        <div class="preview"><span>Lire la suite</span></div>
-                                                    </figure>
-                                                    <div class="wrapper">
-                                                        <small>PSYCHOLOGUE</small>
-                                                        <h3>pharmacie st ruth</h3>
-                                                        <p>Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cuodo....</p>
-                                                        <span class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i> <small>(145)</small></span>
-                                                        <a href="#0" data-toggle="tooltip" data-placement="top" data-original-title="Badge Level" class="badge_list_1"><img src="/webtemplate/static/img/badges/badge_1.svg" width="15" height="15" alt=""/></a>
-                                                    </div>
-                                                    <ul>
-                                                        <li class="claude"><i class="icon-eye-7"></i> 854 Vues</li>
-                                                        <li><a href="/detail-medecin">Reserver</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-
+                                        </t>
                                         </div>
                                         <!-- /row -->
                                     </div>
                                     <!-- /container -->
                                 </div>
 
-
-                                <main>
-                                    <div id="hero_register">
-                                        <div class="container margin_120_95">			
-                                            <div class="row">
-                                                <div class="col-lg-6">
-                                                    <h1>Prenez un rendez-vous</h1>
-                                                    <p class="lead">Obtenez des soins 24 heures sur 24, 7 jours sur 7 directement depuis votre téléphone</p>
-                                                    <div class="box_feat_2">
-                                                        <i class="pe-7s-map-2"></i>
-                                                        <h3>Lieux de soins</h3>
-                                                        <p>Ut nam graece accumsan cotidieque. Has voluptua vivendum accusamus cu. Ut per assueverit temporibus dissentiet.</p>
-                                                    </div>
-                                                    <div class="box_feat_2">
-                                                        <i class="pe-7s-date"></i>
-                                                        <h3>Solutions de soins virtuels</h3>
-                                                        <p>Has voluptua vivendum accusamus cu. Ut per assueverit temporibus dissentiet. Eum no atqui putant democritum, velit nusquam sententiae vis no.</p>
-                                                    </div>
-                                                    <div class="box_feat_2">
-                                                        <i class="pe-7s-phone"></i>
-                                                        <h3>Taux de réussite des connexions</h3>
-                                                        <p>Eos eu epicuri eleifend suavitate, te primis placerat suavitate his. Nam ut dico intellegat reprehendunt, everti audiam diceret in pri, id has clita consequat suscipiantur.</p>
-                                                    </div>
-                                                </div>
-                                                <!-- /col -->
-                                                <div class="col-lg-5 ml-auto">
-                                                    <div class="box_form">
-                                                        <form>
-                                                            <div class="row">
-                                                                <div class="col-md-6 ">
-                                                                    <div class="form-group">
-                                                                        <input type="text" class="form-control" placeholder="Kouakou"/>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <input type="text" class="form-control" placeholder="Jean"/>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- /row -->
-                                                            <div class="row">
-                                                                <div class="col-lg-12">
-                                                                    <div class="form-group">
-                                                                        <input type="text" class="form-control" placeholder="+225 07 00 00 00"/>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- /row -->
-                                                            <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <input type="text" class="form-control" placeholder="Ville"/>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <select class="form-control">
-                                                                            <option value="">Country</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- /row -->
-                                                            <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <input type="text" class="form-control" placeholder="Mobile Phone"/>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <input type="text" class="form-control" placeholder="Office Phone"/>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- /row -->
-                                                            <div class="row">
-                                                                <div class="col-lg-12">
-                                                                    <div class="form-group">
-                                                                        <input type="email" class="form-control" placeholder="Email Address"/>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- /row -->
-                                                            <p class="text-center add_top_30"><input type="submit" class="btn_1" value="prendre rendez-vous"/></p>
-                                                            <div class="text-center"><small>Ut nam graece accumsan cotidieque. Has voluptua vivendum accusamus cu. Ut per assueverit temporibus dissentiet.</small></div>
-                                                        </form>
-                                                    </div>
-                                                    <!-- /box_form -->
-                                                </div>
-                                                <!-- /col -->
+                                <div id="app_section">
+                                    <div class="container">
+                                        <div class="row justify-content-around">
+                                            <div class="col-md-5" style="margin-top: 40px;">
+                                                <p><img src="/webtemplate/static/img/app_img.svg" alt="" class="img-fluid" width="500" height="433"/></p>
                                             </div>
-                                            <!-- /row -->
+                                            <div class="col-md-6" style="margin-top: 40px;">
+                                                <small>Application</small>
+                                                <h3>Téléchargez <strong>l'application  MOOIS</strong>  maintenant!</h3>
+                                                <p class="lead">Tota omittantur necessitatibus mei ei. Quo paulo perfecto eu, errem percipit ponderum no eos. Has eu mazim sensibus. Ad nonumes dissentiunt qui, ei menandri electram eos. Nam iisque consequuntur cu.</p>
+                                                <div class="app_buttons " data-wow-offset="100">
+                                                    
+                                                    <a href="#0" class="fadeIn"><img src="/webtemplate/static/img/apple_app.png" alt="" width="150" height="50" data-retina="true"/></a>
+                                                    <a href="#0" class="fadeIn"><img src="/webtemplate/static/img/google_play_app.png" alt="" width="150" height="50" data-retina="true"/></a>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <!-- /container -->
+                                        <!-- /row -->
                                     </div>
-                                    <!-- /hero_register -->
-                                </main>
+                                    <!-- /container -->
+                                </div>
                                     
                             </main>
 
-                            <!-- COMMON SCRIPTS -->
                         <script src="/webtemplate/static/js/jquery-3.5.1.min.js"></script>
                         <script src="/webtemplate/static/js/common_scripts.min.js"></script>
-                        <script src="/webtemplate/static/js/functions.js"></script>
+                        <script src="/webtemplate/static/js/functions.js"></script>        
                         </body>
                     </div>
                 </t>

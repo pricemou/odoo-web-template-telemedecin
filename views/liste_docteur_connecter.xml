@@ -137,11 +137,14 @@
 		<div class="container margin_60_35">
 			<div class="row">
 				<div class="col-lg-7">
-
+					
 
 				<t t-foreach="medecin" t-as="medecin">
-					<div class="strip_list wow fadeIn">
+				
+					<div class="strip_list ">
+					
 						<a href="#0" class="wish_bt"></a>
+						
 						<figure>
 							<a href="/detail-medecin"><img t-att-src="'data:image/png;base64,%s' % to_text(medecin.partner_id.image)" class="img-fluid" /></a>
 						</figure>

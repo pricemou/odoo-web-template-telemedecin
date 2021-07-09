@@ -1,7 +1,35 @@
 # -*- coding: utf-8 -*-
 from odoo import http
+from odoo.addons.website.controllers.main import Website
 import logging
 _logger = logging.getLogger(__name__) 
+
+
+class Website(Website):
+    @http.route(auth='public', website=True)
+    def index(self, data={}, **kw):
+        medecin = http.request.env['medical.physician']
+        pharmacie = http.request.env['medical.pharmacie']
+        userConect = http.request.session.uid
+
+        medecin = medecin.sudo().search([],limit=6)
+        pharmacies = pharmacie.sudo().search([],limit=6)
+        userConnect = userConect
+
+        _logger.info('------------------------')
+        _logger.info(http.request.httprequest.environ['HTTP_USER_AGENT'])
+        _logger.info('------------------------')
+
+        if http.request.website.theme_id.name == 'webtemplate':
+            super(Website, self).index(**kw)
+            data['userConnect'] = userConnect
+            data['medecin'] = medecin
+            data['pharmacie'] = pharmacies
+            
+            return http.request.render("website.homepage1", data)
+        else:
+            return super(Website, self).index(**kw)
+
 
 class OpenMedecin(http.Controller):
     @http.route('/detail-medecin/<int:medecin_id>', auth='public' ,website=True)
@@ -122,6 +150,17 @@ class OpenMedecin(http.Controller):
         # Teachers = http.request.env['academy.teachers']
         return http.request.render('webtemplate.formulaire')
 
+    @http.route('/medecinAdomicile', auth='public', website=True)
+    def formulaire(self, **kw):
+        medecinPrescription =  http.request.env['medical.physician'].sudo().search([],limit=6)
+        _logger.info('------------------------')
+        _logger.info(medecinPrescription)
+        _logger.info('')
+        return http.request.render('webtemplate.medecinAdomicile',
+        {
+            'medecinPrescription':medecinPrescription,
+        })
+
 
     @http.route('/aller/vers', auth='public', website=True)
     def function_test(self, **kw):
@@ -210,32 +249,44 @@ class Docteur_partien(http.Controller):
         message =   kw['message']
         data =      kw['date']
         date = data + ' ' + "17:57:02"
+        appointment_date = data +' '+ str(kw['heurs']) 
+        appointment_end = data +' '+"18:00:00"
         
         if userConnect:
-            userParnert = http.request.env['res.partner'].sudo().search([('email','=',str(users.login))],limit=1)
+            # userParnert = http.request.env['res.partner'].sudo().search([('email','=',str(users.login))],limit=1)
+            userParnert = http.request.env['res.users'].sudo().browse([userConnect])
+            userPatient = http.request.env['medical.patient'].sudo().search([('patient_id.email','=',str(userParnert.email))],limit=1)
 
-            cpt = {
-                        'patient_id': userParnert.id,
-                        'sex': status,
-                        'critical_info': message
-            }
+            if userPatient:
+                priseRendeVous = {
+                                'patient_id': userPatient.id,
+                                'appointment_date': appointment_date,
+                                'appointment_end': appointment_end,
+                                'doctor_id': medecin_detail.id,
+                            }
+                rendezVous = http.request.env['medical.appointment'].sudo().create(priseRendeVous)
+            else:
+                cpt = {
+                            'patient_id': userParnert.id,
+                            'sex': status,
+                            'critical_info': message
+                }
 
-            crationPatient =  http.request.env['medical.patient'].sudo().create(cpt)
+                crationPatient =  http.request.env['medical.patient'].sudo().create(cpt)
 
-            # add logging
-            _logger.info('------------------------')
-            _logger.info(userParnert.name)    
-            _logger.info('------------------------')
-            # add logging
+                # add logging
+                _logger.info('------------A------------')
+                _logger.info(userPatient.patient_id.id)    
+                _logger.info('------------------------')
+                # add logging
 
-            priseRendeVous = {
-                            'patient_id': crationPatient.id,
-                            'appointment_date': "2021-05-28 08:00:00",
-                            'appointment_end': date,
-                            'doctor_id': medecin_detail.id,
-                        }
-            rendezVous = http.request.env['medical.appointment'].sudo().create(priseRendeVous)
-
+                priseRendeVous = {
+                                'patient_id': crationPatient.id,
+                                'appointment_date': appointment_date,
+                                'appointment_end': appointment_end,
+                                'doctor_id': medecin_detail.id,
+                            }
+                rendezVous = http.request.env['medical.appointment'].sudo().create(priseRendeVous)
             return http.request.render('webtemplate.confirmation')
 
         else:
@@ -293,3 +344,4 @@ class academacadem(http.Controller):
             'pharmacie': pharmacie.sudo().search([],limit=6),
             'userConnect':userConect,
         })
+

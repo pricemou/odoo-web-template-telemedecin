@@ -104,7 +104,7 @@
                         Click pour génerer l'Ordonnance 
                     <t t-esc="prescription_pdf.id"/></a>
                     <!-- <t t-esc="prescription_pdf"/> -->
-                    <button>envoyer par mail</button>
+                    <button> <a t-attf-href="mailto:#{email}">envoyer par mail</a></button>
 					<p>Click pour sur le numéro pour envoyer par whatssap <a t-att-href="'https://wa.me/+225' + str(numero_telephone)"> <t t-esc="numero_telephone"/></a></p>
 
 					</div>

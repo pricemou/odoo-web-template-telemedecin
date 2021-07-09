@@ -2,35 +2,35 @@
 /* Your custom styles below */
 /*============================================================================================*/
 .o_affix_enabled{
+  height: 87px;
+  padding: 9px;
+  margin: 0px;
+  }
+  header .navbar-brand.logo {
+    /* padding-bottom: 0; */
+    margin-top: -38px;
+}
+.o_footer{
     display: none;
   }
- 
-  .o_footer{
-    display: none;
-  }
-  .navbar-light{
+.modal-header{
+  color: black;
+}
+  /* .navbar-light{
       display: none;
-  }
-  @media (max-width: 500px) {
+  } */
+  /* @media (max-width: 500px) {
     .dispart {
-      /* For less than 500px */
       display: none;
     }
   }
 
   @media (max-width: 3000px) {
     .box_feat1 {
-      /* For less than 500px */
       display: none;
     }
   }
 
 .medecin_id_class{
   display: none;
-}
-
-
-
-  
-
- 
+} */

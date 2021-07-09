@@ -200,11 +200,11 @@
                                     <figure><img t-att-src="'data:image/png;base64,%s' % to_text(rendezVous.patient_id.photo)" class="img-fluid" /></figure>
                                     <h4><t t-esc="rendezVous.patient_id.patient_id.name"/><i class="pending">En attente</i></h4>
                                     <ul class="booking_details">
-                                        <li><strong>Date de réservation</strong><t t-esc="rendezVous.appointment_date"/> </li>
-                                        <li><strong>Heure de réservation</strong> <t t-esc="rendezVous.appointment_end"/> </li>
+                                        <li><strong>Date - Heure(Debut)</strong><t t-esc="rendezVous.appointment_date"/> </li>
+                                        <li><strong>Date - Heure(Fin)</strong> <t t-esc="rendezVous.appointment_end"/> </li>
                                         <li><strong>Message</strong> <t t-esc="rendezVous.comments"/> </li>
-                                        <li><strong>Telephone</strong> <t t-esc="rendezVous.patient_id.patient_id.phone"/></li>
-                                        <li><strong>Email</strong> <t t-esc="rendezVous.patient_id.patient_id.email"/></li>
+                                        <li><strong>Telephone</strong> <a t-attf-href="https://wa.me/#str({rendezVous.patient_id.patient_id.phone})"><t t-esc="rendezVous.patient_id.patient_id.phone"/></a></li>
+                                        <li><strong>Email</strong> <a t-attf-href="mailto:#{rendezVous.patient_id.patient_id.email}"><t t-esc="rendezVous.patient_id.patient_id.email"/></a> </li>
                                     </ul>
                                     <ul class="buttons">
                                         <li><a t-attf-href="/consulter/#{rendezVous.patient_id.id}" class="btn_1 gray approve"><i class="fa fa-fw fa-check-circle-o"></i> Approuvé</a></li>
@@ -280,8 +280,6 @@
                 <script src="/webtemplate/static/js/admin.js"></script>
                 <!-- Custom scripts for this page-->
                 <script src="/webtemplate/static/js/admin-charts.js"></script>
-    
-    
           </body>
 
         </template>

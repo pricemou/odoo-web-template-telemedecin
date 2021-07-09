@@ -1,5 +1,8 @@
 // const roomname = ""
 // alert(roomname) 
+
+var mediaDevices = navigator.mediaDevices;
+
 $(document).ready(function(roomname ){
     var domain = "meet.jit.si";
     var options = {
@@ -12,11 +15,3 @@ $(document).ready(function(roomname ){
     api.executeCommand('toggleAudio');
     api.executeCommand('toggleVideo');
 });
-
-$(document).ready(function() {
-
-    var multipleCancelButton = new Choices('#choices-multiple-remove-button', {
-        removeItemButton: true,
-    });
-});
-

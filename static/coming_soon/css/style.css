@@ -196,7 +196,7 @@ hr {
 /*============================================================================================*/
 
 
-.form-control {height: 38px; -webkit-box-shadow: none; box-shadow: none; -webkit-appearance: none; padding-left:8px; }
+/* .form-control {height: 38px; -webkit-box-shadow: none; box-shadow: none; -webkit-appearance: none; padding-left:8px; }
 .first-nogutter {padding-right:0;}
 .nogutter {padding-right:0; padding-left:5px;}
 .form-control{
@@ -211,7 +211,7 @@ hr {
 }
 .loader {float:right; display:inline; margin-top:10px;color:#fff; margin-right:-14px;}
 label {font-weight:600; line-height:14px;}
-.error_message { margin-top:3px; color: #F66; display:inline-block;}
+.error_message { margin-top:3px; color: #F66; display:inline-block;} */
 
 /*============================================================================================*/
 /* 3.  COMMON */

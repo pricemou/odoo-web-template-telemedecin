@@ -24,7 +24,10 @@ class Admin(http.Controller):
     @http.route('/consulter/<int:reservation_id>', auth='public')
     def consulter(self, reservation_id):
         ordonnance = http.request.env['medical.medicament']
-        reservation_all = http.request.env['medical.physician'].browse([reservation_id])
+        reservation_all = http.request.env['medical.patient'].browse([reservation_id])
+        _logger.info('------------------------')
+        _logger.info(reservation_all.patient_id.name)
+        _logger.info('------------------------')
 
         return http.request.render('webtemplate.consulter', {
             "ordonnance": ordonnance.sudo().search([]),
@@ -67,16 +70,17 @@ class Admin(http.Controller):
                 rendezVous = http.request.env['medical.appointment'].sudo().search([], order="id desc",limit=5)
             else:
                 usersConnect = http.request.env['res.users'].sudo().browse([usersConnectId])
-                partnerId = usersConnect.partner_id.name
-                rendezVous = http.request.env['medical.appointment'].sudo().search([('doctor_id','=', partnerId)], order="id desc",limit=5)
+                partnerId = usersConnect.partner_id.id
+                rendezVous = http.request.env['medical.appointment'].sudo().search([('doctor_id.partner_id.id','=', partnerId)], order="id desc",limit=5)
                 _logger.info('------------------------')
                 _logger.info(usersConnectId)
-                _logger.info(rendezVous.search([],order="id desc"))
+                _logger.info(rendezVous)
                 _logger.info('------------------------')
                 
             # add logging
             return http.request.render('webtemplate.reservation',
-            {"rendezVous":rendezVous,
+            {
+                "rendezVous":rendezVous,
             })
 
         except:
@@ -120,9 +124,10 @@ class Admin(http.Controller):
         prescrition = http.request.env['medical.prescription.order'].sudo().create(val)
 
         _logger.info('------------------------')
-        _logger.info(prescrition.patient_id.patient_id.phone)
+        _logger.info(prescrition.patient_id.patient_id.email)
         _logger.info('------------------------')
         number = prescrition.patient_id.patient_id.phone
+        email = prescrition.patient_id.patient_id.email
 
         # Ajout des médicament
         for cpt in list_medicaments:
@@ -142,6 +147,7 @@ class Admin(http.Controller):
             'webtemplate.confirmation_docteur',{
                 "prescription_pdf": rep,
                 "numero_telephone": number,
+                "email": email,
         })
 
 
